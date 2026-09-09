@@ -1621,7 +1621,7 @@ public final class Launcher extends Activity
         }
         if (appSearchData == null) {
             appSearchData = new Bundle();
-            appSearchData.putString(Search.SOURCE, "launcher-search");
+            appSearchData.putString("source", "launcher-search");
         }
         Rect sourceBounds = new Rect();
         if (mSearchDropTargetBar != null) {
