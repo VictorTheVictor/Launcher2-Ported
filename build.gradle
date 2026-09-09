@@ -1,0 +1,64 @@
+buildscript
+{
+	repositories
+	{
+		google()
+		mavenCentral()
+	}
+
+	dependencies
+	{
+		classpath 'com.android.tools.build:gradle:4.1.3'
+	}
+}
+
+apply plugin: 'com.android.application'
+
+repositories
+{
+	google()
+	mavenCentral()
+}
+
+android
+{
+	compileSdkVersion 29
+	buildToolsVersion '29.0.3'
+
+	defaultConfig
+	{
+		applicationId 'org.example.jellybean.launcher2'
+		minSdkVersion 18
+		targetSdkVersion 29
+		versionCode 1
+		versionName '1.0'
+	}
+
+	sourceSets
+	{
+		main
+		{
+			manifest.srcFile 'AndroidManifest.xml'
+			java.srcDirs = ['src']
+			res.srcDirs = ['res']
+			assets.srcDirs = ['assets']
+			aidl.srcDirs = ['src']
+			renderscript.srcDirs = ['src']
+			jniLibs.srcDirs = ['libs']
+		}
+	}
+
+	compileOptions
+	{
+		sourceCompatibility JavaVersion.VERSION_1_8
+		targetCompatibility JavaVersion.VERSION_1_8
+	}
+}
+
+dependencies
+{
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation fileTree(dir: '.', include: ['*.jar'])
+
+	implementation 'com.android.support:support-v13:28.0.0'
+}
