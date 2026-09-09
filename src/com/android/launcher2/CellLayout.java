@@ -987,7 +987,17 @@ public class CellLayout extends ViewGroup {
         int numWidthGaps = mCountX - 1;
         int numHeightGaps = mCountY - 1;
 
-        if (mOriginalWidthGap < 0 || mOriginalHeightGap < 0) {
+		if (getParent() instanceof Workspace && mCountX > 0 && mCountY > 0)
+		{
+			int hSpace = Math.max(0, widthSpecSize - getPaddingLeft() - getPaddingRight());
+			int vSpace = Math.max(0, heightSpecSize - getPaddingTop() - getPaddingBottom());
+			mCellWidth = Math.max(1, hSpace / mCountX);
+			mCellHeight = Math.max(1, vSpace / mCountY);
+			mWidthGap = 0;
+			mHeightGap = 0;
+			mShortcutsAndWidgets.setCellDimensions(mCellWidth, mCellHeight, mWidthGap, mHeightGap, mCountX);
+		}
+        else if (mOriginalWidthGap < 0 || mOriginalHeightGap < 0) {
             int hSpace = widthSpecSize - getPaddingLeft() - getPaddingRight();
             int vSpace = heightSpecSize - getPaddingTop() - getPaddingBottom();
             int hFreeSpace = hSpace - (mCountX * mCellWidth);
