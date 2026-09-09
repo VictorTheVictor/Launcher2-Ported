@@ -15,7 +15,7 @@
 -->
 <com.android.launcher2.Hotseat
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher"
+    xmlns:launcher="http://schemas.android.com/apk/res-auto"
     launcher:cellCountX="@integer/hotseat_cell_count"
     launcher:cellCountY="1">
     <com.android.launcher2.CellLayout
