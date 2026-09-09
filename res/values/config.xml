@@ -76,7 +76,7 @@
     <integer name="folder_max_num_items">16</integer>
 
     <integer name="cell_count_x">4</integer>
-    <integer name="cell_count_y">4</integer>
+    <integer name="cell_count_y">6</integer>
 
     <!-- Whether or not to use custom clings if a custom workspace layout is passed in -->
     <bool name="config_useCustomClings">false</bool>
