@@ -1793,7 +1793,7 @@ public class Workspace extends SmoothPagedView
                         tv.getLayout().getLineTop(0);
             }
             destCanvas.translate(-v.getScrollX() + padding / 2, -v.getScrollY() + padding / 2);
-            destCanvas.clipRect(clipRect, Op.REPLACE);
+            destCanvas.clipRect(clipRect);
             v.draw(destCanvas);
 
             // Restore text visibility of FolderIcon if necessary
